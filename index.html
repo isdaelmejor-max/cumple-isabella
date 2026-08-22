@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Para Isabella ❤️</title>
+<title>Para mi amor ❤️</title>
+
 
 <style>
+
+/* ========================= */
+/* GENERAL */
+/* ========================= */
 
 *{
     box-sizing:border-box;
@@ -14,320 +22,636 @@
     padding:0;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
+
     font-family:Georgia,serif;
-    background:linear-gradient(135deg,#120812,#351329,#76264d);
+
+    background:
+    linear-gradient(
+        135deg,
+        #120812,
+        #351329,
+        #76264d
+    );
+
     color:white;
+
     overflow-x:hidden;
 }
 
-/* LOGIN */
+
+/* ========================= */
+/* PANTALLA DE CONTRASEÑA */
+/* ========================= */
 
 #login{
+
     position:fixed;
+
     inset:0;
+
     z-index:1000;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
     text-align:center;
-    background:linear-gradient(135deg,#100711,#42172f);
+
+    background:
+    linear-gradient(
+        135deg,
+        #100711,
+        #42172f
+    );
 }
+
 
 .login-box{
+
     width:90%;
+
     max-width:450px;
+
     padding:45px 30px;
+
     border-radius:25px;
-    background:rgba(255,255,255,.1);
+
+    background:
+    rgba(255,255,255,.1);
+
     backdrop-filter:blur(15px);
-    box-shadow:0 20px 60px rgba(0,0,0,.5);
+
+    box-shadow:
+    0 20px 60px
+    rgba(0,0,0,.5);
 }
+
 
 .heart{
+
     font-size:70px;
-    animation:beat 1.3s infinite;
+
+    animation:
+    beat 1.3s infinite;
 }
+
 
 @keyframes beat{
+
     50%{
-        transform:scale(1.2);
+
+        transform:
+        scale(1.2);
+
     }
+
 }
+
 
 .login-box h1{
+
     font-size:2.5rem;
+
     margin:20px 0;
+
 }
+
 
 .login-box p{
+
     color:#ffd9e7;
+
     line-height:1.7;
+
 }
 
+
 input{
+
     width:100%;
+
     padding:15px;
+
     margin:25px 0 15px;
+
     border:none;
+
     border-radius:30px;
+
     text-align:center;
+
     font-size:17px;
+
     outline:none;
 }
 
+
 button{
+
     border:none;
+
     border-radius:30px;
+
     padding:15px 30px;
+
     background:#ff5c93;
+
     color:white;
+
     font-size:16px;
+
     cursor:pointer;
+
     transition:.3s;
+
+    box-shadow:
+    0 8px 25px
+    rgba(255,92,147,.35);
 }
+
 
 button:hover{
+
     transform:scale(1.07);
+
     background:#ff78a6;
+
 }
+
 
 #error{
+
     margin-top:15px;
+
     color:#ffb5c9;
+
 }
 
+
+/* ========================= */
 /* CONTENIDO */
+/* ========================= */
 
 #contenido{
+
     display:none;
+
 }
 
-/* HERO */
+
+/* ========================= */
+/* INICIO */
+/* ========================= */
 
 .hero{
+
     min-height:100vh;
+
     display:flex;
+
     flex-direction:column;
+
     justify-content:center;
+
     align-items:center;
+
     text-align:center;
+
     padding:30px;
 }
+
 
 .hero h1{
-    font-size:clamp(3rem,9vw,7rem);
-    text-shadow:0 0 30px rgba(255,150,190,.5);
+
+    font-size:
+    clamp(
+        3rem,
+        9vw,
+        7rem
+    );
+
+    text-shadow:
+    0 0 30px
+    rgba(255,150,190,.5);
+
 }
+
 
 .hero p{
+
     max-width:700px;
+
     font-size:1.25rem;
+
     line-height:1.8;
+
     color:#ffe4ed;
+
 }
 
+
+/* ========================= */
 /* CUENTA REGRESIVA */
+/* ========================= */
 
 .countdown-section{
+
     min-height:100vh;
+
     display:flex;
+
     flex-direction:column;
+
     justify-content:center;
+
     align-items:center;
+
     text-align:center;
+
     padding:30px;
 }
 
+
 .countdown-section h2{
-    font-size:clamp(2rem,6vw,4rem);
+
+    font-size:
+    clamp(
+        2rem,
+        6vw,
+        4rem
+    );
+
     margin-bottom:15px;
+
 }
+
 
 .countdown-text{
+
     color:#ffd9e7;
+
     margin-bottom:35px;
+
     font-size:1.1rem;
+
 }
+
 
 .countdown{
+
     display:flex;
+
     justify-content:center;
+
     flex-wrap:wrap;
+
     gap:15px;
+
     max-width:900px;
+
 }
+
 
 .time-box{
+
     width:140px;
+
     padding:25px 15px;
+
     border-radius:20px;
-    background:rgba(255,255,255,.1);
+
+    background:
+    rgba(255,255,255,.1);
+
     backdrop-filter:blur(12px);
-    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+    box-shadow:
+    0 15px 35px
+    rgba(0,0,0,.25);
+
 }
+
 
 .time-box span{
+
     display:block;
+
     font-size:3rem;
+
     font-weight:bold;
+
 }
+
 
 .time-box small{
+
     color:#ffcbdc;
+
     font-size:1rem;
+
 }
+
 
 .birthday-message{
+
     display:none;
-    font-size:clamp(2rem,7vw,5rem);
-    animation:appear 1s ease;
+
+    font-size:
+    clamp(
+        2rem,
+        7vw,
+        5rem
+    );
+
+    animation:
+    appear 1s ease;
+
 }
 
+
 @keyframes appear{
+
     from{
+
         opacity:0;
-        transform:scale(.7);
+
+        transform:
+        scale(.7);
+
     }
 
     to{
+
         opacity:1;
-        transform:scale(1);
+
+        transform:
+        scale(1);
+
     }
+
 }
 
+
+/* ========================= */
 /* SECCIONES */
+/* ========================= */
 
 section{
+
     padding:90px 20px;
+
     text-align:center;
+
 }
+
 
 section h2{
+
     font-size:2.5rem;
+
     margin-bottom:25px;
+
 }
+
 
 .texto{
+
     max-width:700px;
+
     margin:auto;
+
     line-height:1.9;
+
     color:#ffe5ee;
+
     font-size:1.1rem;
+
 }
 
+
+/* ========================= */
 /* GALERÍA */
+/* ========================= */
 
 .galeria{
+
     max-width:1000px;
+
     margin:40px auto;
+
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(220px,1fr)
+    );
+
     gap:20px;
+
 }
+
 
 .foto{
+
     height:300px;
+
     border-radius:20px;
+
     overflow:hidden;
-    box-shadow:0 15px 35px rgba(0,0,0,.4);
+
+    box-shadow:
+    0 15px 35px
+    rgba(0,0,0,.4);
+
     transition:.4s;
+
 }
+
 
 .foto:hover{
-    transform:translateY(-10px) rotate(1deg);
+
+    transform:
+    translateY(-10px)
+    rotate(1deg);
+
 }
+
 
 .foto img{
+
     width:100%;
+
     height:100%;
+
     object-fit:cover;
+
 }
 
+
+/* ========================= */
 /* CARTA */
+/* ========================= */
 
 .carta{
+
     max-width:750px;
+
     margin:40px auto;
+
     padding:40px;
+
     border-radius:25px;
-    background:rgba(255,255,255,.09);
+
+    background:
+    rgba(255,255,255,.09);
+
     backdrop-filter:blur(10px);
+
     line-height:2;
+
     text-align:left;
+
+    box-shadow:
+    0 20px 50px
+    rgba(0,0,0,.2);
+
 }
 
+
+/* ========================= */
 /* MÚSICA */
+/* ========================= */
 
 .music{
+
     position:fixed;
+
     bottom:20px;
+
     right:20px;
+
     z-index:500;
-    background:rgba(255,255,255,.12);
+
+    background:
+    rgba(255,255,255,.12);
+
     padding:10px;
+
     border-radius:20px;
+
     backdrop-filter:blur(10px);
+
 }
+
 
 .music audio{
+
     width:230px;
+
 }
 
-/* FINAL */
+
+/* ========================= */
+/* SORPRESA FINAL */
+/* ========================= */
 
 .sorpresa{
+
     min-height:100vh;
+
     display:flex;
+
     flex-direction:column;
+
     justify-content:center;
+
     align-items:center;
+
     text-align:center;
+
     padding:30px;
+
 }
+
 
 #mensajeFinal{
+
     max-width:700px;
+
     margin-top:30px;
+
     font-size:1.4rem;
+
     line-height:1.8;
+
 }
+
 
 footer{
+
     text-align:center;
+
     padding:40px;
+
     color:#ffc8da;
+
 }
 
+
+/* ========================= */
 /* CORAZONES */
+/* ========================= */
 
 .floating-heart{
+
     position:fixed;
+
     bottom:-30px;
+
     z-index:900;
-    animation:float 6s linear forwards;
+
+    animation:
+    float 6s linear forwards;
+
     pointer-events:none;
+
 }
+
 
 @keyframes float{
 
     to{
-        transform:translateY(-110vh) rotate(360deg);
+
+        transform:
+        translateY(-110vh)
+        rotate(360deg);
+
         opacity:0;
+
     }
 
 }
 
 </style>
+
 </head>
+
 
 
 <body>
 
 
-<!-- ========================= -->
-<!-- PANTALLA DE CONTRASEÑA -->
-<!-- ========================= -->
+<!-- ================================= -->
+<!-- CONTRASEÑA -->
+<!-- ================================= -->
 
 <div id="login">
 
@@ -337,14 +661,22 @@ footer{
             ❤️
         </div>
 
+
         <h1>
-            Una sorpresa para Isabella
+            Una sorpresa para mi amor
         </h1>
 
+
         <p>
+
             Si realmente eres tú...
+
+            <br>
+
             sabes qué tienes que escribir. 👀
+
         </p>
+
 
         <input
             type="password"
@@ -352,9 +684,13 @@ footer{
             placeholder="Escribe la contraseña..."
         >
 
+
         <button onclick="entrar()">
+
             Entrar ❤️
+
         </button>
+
 
         <p id="error"></p>
 
@@ -364,18 +700,24 @@ footer{
 
 
 
-<!-- ========================= -->
+<!-- ================================= -->
 <!-- CONTENIDO -->
-<!-- ========================= -->
+<!-- ================================= -->
 
 <div id="contenido">
 
 
+<!-- ================================= -->
 <!-- MÚSICA -->
+<!-- ================================= -->
 
 <div class="music">
 
-    <audio id="musica" controls loop>
+    <audio
+        id="musica"
+        controls
+        loop
+    >
 
         <source
             src="musica.mp3"
@@ -388,19 +730,24 @@ footer{
 
 
 
-<!-- ========================= -->
+<!-- ================================= -->
 <!-- INICIO -->
-<!-- ========================= -->
+<!-- ================================= -->
 
 <div class="hero">
+
 
     <div class="heart">
         ❤️
     </div>
 
+
     <h1>
-        Para Isabella
+
+        Para mi amor
+
     </h1>
+
 
     <p>
 
@@ -410,37 +757,52 @@ footer{
 
         Pero primero...
 
+        <br>
+
         espera conmigo hasta que llegue
         tu día especial. ❤️
 
     </p>
 
+
     <br>
 
+
     <button
-        onclick="document.getElementById('cuenta').scrollIntoView({behavior:'smooth'})"
+        onclick="
+        document
+        .getElementById('cuenta')
+        .scrollIntoView({
+            behavior:'smooth'
+        })
+        "
     >
 
         Ver la cuenta regresiva ↓
 
     </button>
 
+
 </div>
 
 
 
-<!-- ========================= -->
+<!-- ================================= -->
 <!-- CUENTA REGRESIVA -->
-<!-- ========================= -->
+<!-- ================================= -->
 
 <div
     class="countdown-section"
     id="cuenta"
 >
 
+
     <h2>
+
         ⏳ Falta poquito...
+
     </h2>
+
 
     <p class="countdown-text">
 
@@ -454,6 +816,7 @@ footer{
         class="countdown"
         id="countdown"
     >
+
 
         <div class="time-box">
 
@@ -506,8 +869,12 @@ footer{
 
         </div>
 
+
     </div>
 
+
+
+    <!-- MENSAJE CUANDO LLEGA EL CUMPLEAÑOS -->
 
     <div
         class="birthday-message"
@@ -519,7 +886,7 @@ footer{
         <br>
 
         ¡FELIZ CUMPLEAÑOS,
-        ISABELLA!
+        AMOR MÍO!
 
         <br>
 
@@ -527,55 +894,73 @@ footer{
 
     </div>
 
+
 </div>
 
 
 
-<!-- ========================= -->
-<!-- HISTORIA -->
-<!-- ========================= -->
+<!-- ================================= -->
+<!-- NUESTRA HISTORIA -->
+<!-- ================================= -->
 
 <section>
 
+
     <h2>
+
         ✨ Nuestra historia
+
     </h2>
 
+
     <p class="texto">
+
 
         Hay personas que llegan a nuestra vida
         y terminan convirtiéndose en alguien especial.
 
+
         <br><br>
+
 
         Tú eres una de esas personas para mí.
 
+
         <br><br>
+
 
         Cada conversación, cada risa y cada momento
         que hemos compartido se ha convertido
         en un recuerdo que quiero guardar.
 
+
         <br><br>
+
 
         Y hoy quería hacer algo diferente
         para recordarte lo importante que eres para mí. ❤️
 
+
     </p>
+
 
 </section>
 
 
 
-<!-- ========================= -->
+<!-- ================================= -->
 <!-- FOTOS -->
-<!-- ========================= -->
+<!-- ================================= -->
 
 <section>
 
+
     <h2>
+
         📸 Nuestros recuerdos
+
     </h2>
+
 
     <p class="texto">
 
@@ -585,101 +970,163 @@ footer{
     </p>
 
 
+
     <div class="galeria">
 
-        <div class="foto">
-            <img src="foto1.jpg">
-        </div>
 
         <div class="foto">
-            <img src="foto2.jpg">
+
+            <img
+                src="foto1.jpg"
+                alt="Nuestro recuerdo"
+            >
+
         </div>
 
-        <div class="foto">
-            <img src="foto3.jpg">
-        </div>
 
         <div class="foto">
-            <img src="foto4.jpg">
+
+            <img
+                src="foto2.jpg"
+                alt="Nuestro recuerdo"
+            >
+
         </div>
+
+
+        <div class="foto">
+
+            <img
+                src="foto3.jpg"
+                alt="Nuestro recuerdo"
+            >
+
+        </div>
+
+
+        <div class="foto">
+
+            <img
+                src="foto4.jpg"
+                alt="Nuestro recuerdo"
+            >
+
+        </div>
+
 
     </div>
+
 
 </section>
 
 
 
-<!-- ========================= -->
+<!-- ================================= -->
 <!-- CARTA -->
-<!-- ========================= -->
+<!-- ================================= -->
 
 <section>
 
+
     <h2>
+
         💌 Para ti
+
     </h2>
+
 
 
     <div class="carta">
 
-        Isabella,
+
+        Amor mío,
+
 
         <br><br>
+
 
         Hoy quería hacer algo especial para ti,
         porque no quería que tu cumpleaños
         fuera simplemente un día más.
 
+
         <br><br>
+
 
         Quiero agradecerte por todos los momentos,
         por las risas, las conversaciones
         y por cada recuerdo que hemos creado.
 
+
         <br><br>
+
 
         Espero que este nuevo año de tu vida
         esté lleno de cosas bonitas,
         sueños cumplidos y muchísimas razones
         para sonreír.
 
+
         <br><br>
+
 
         Y espero que yo pueda seguir estando
         presente para compartir muchos de esos
         momentos contigo.
 
-        <br><br>
-
-        Feliz cumpleaños, Isabella.
 
         <br><br>
+
+
+        Gracias por ser tú.
+
+
+        <br><br>
+
+
+        Feliz cumpleaños, amor mío.
+
+
+        <br><br>
+
 
         Te quiero muchísimo. ❤️
 
+
     </div>
+
 
 </section>
 
 
 
-<!-- ========================= -->
-<!-- FINAL -->
-<!-- ========================= -->
+<!-- ================================= -->
+<!-- SORPRESA FINAL -->
+<!-- ================================= -->
 
 <div class="sorpresa">
 
+
     <div class="heart">
+
         🎁
+
     </div>
 
+
     <h2>
+
         Tengo una última sorpresa...
+
     </h2>
+
 
     <br>
 
-    <button onclick="mostrarSorpresa()">
+
+    <button
+        onclick="mostrarSorpresa()"
+    >
 
         Abrir ❤️
 
@@ -688,12 +1135,14 @@ footer{
 
     <p id="mensajeFinal"></p>
 
+
 </div>
+
 
 
 <footer>
 
-    Hecho especialmente para Isabella ❤️
+    Hecho especialmente para mi amor ❤️
 
 </footer>
 
@@ -705,39 +1154,63 @@ footer{
 <script>
 
 
-/* ========================= */
+/* ================================= */
 /* CONTRASEÑA */
-/* ========================= */
+/* ================================= */
 
 function entrar(){
 
+
     const contraseña =
-        document.getElementById("password").value;
+        document
+        .getElementById("password")
+        .value;
 
 
-    if(contraseña === "15/05/26"){
-
-        document.getElementById("login").style.display =
-            "none";
-
-        document.getElementById("contenido").style.display =
-            "block";
+    if(
+        contraseña === "15/05/26"
+    ){
 
 
-        document.getElementById("musica")
-            .play()
-            .catch(()=>{});
+        document
+        .getElementById("login")
+        .style.display =
+        "none";
+
+
+        document
+        .getElementById("contenido")
+        .style.display =
+        "block";
+
+
+        /*
+        Intentamos reproducir
+        la música.
+        El navegador puede
+        bloquear el autoplay.
+        */
+
+
+        document
+        .getElementById("musica")
+        .play()
+        .catch(()=>{});
 
 
         crearCorazones();
+
 
     }
 
     else{
 
-        document.getElementById("error")
-            .textContent =
-            "Esa no es... tú sabes cuál es ❤️";
+
+        document
+        .getElementById("error")
+        .textContent =
+        "Esa no es... tú sabes cuál es ❤️";
+
 
     }
 
@@ -745,7 +1218,9 @@ function entrar(){
 
 
 
-/* ENTER */
+/* ================================= */
+/* ENTER PARA CONTRASEÑA */
+/* ================================= */
 
 document
 .getElementById("password")
@@ -753,7 +1228,9 @@ document
     "keypress",
     function(event){
 
-        if(event.key === "Enter"){
+        if(
+            event.key === "Enter"
+        ){
 
             entrar();
 
@@ -764,223 +1241,335 @@ document
 
 
 
-/* ========================= */
+/* ================================= */
 /* CUENTA REGRESIVA */
-/* ========================= */
+/* ================================= */
 
 
 /*
-   FECHA DEL CUMPLEAÑOS
 
-   27 DE AGOSTO DE 2026
+CUMPLEAÑOS:
+
+27 DE AGOSTO DE 2026
+00:00 HORA PERÚ
+
 */
 
+
 const fechaCumpleaños =
-    new Date("2026-08-27T00:00:00-05:00").getTime();
+
+    new Date(
+        "2026-08-27T00:00:00-05:00"
+    ).getTime();
+
 
 
 const contador =
-    setInterval(function(){
 
-        const ahora =
-            new Date().getTime();
-
-
-        const distancia =
-            fechaCumpleaños - ahora;
+    setInterval(
+        function(){
 
 
-        const dias =
-            Math.floor(
-                distancia /
-                (1000 * 60 * 60 * 24)
-            );
+            const ahora =
+
+                new Date()
+                .getTime();
 
 
-        const horas =
-            Math.floor(
-                (distancia %
-                (1000 * 60 * 60 * 24))
-                /
-                (1000 * 60 * 60)
-            );
+
+            const distancia =
+
+                fechaCumpleaños
+                - ahora;
 
 
-        const minutos =
-            Math.floor(
-                (distancia %
-                (1000 * 60 * 60))
-                /
-                (1000 * 60)
-            );
+
+            const dias =
+
+                Math.floor(
+
+                    distancia /
+                    (
+                        1000 *
+                        60 *
+                        60 *
+                        24
+                    )
+
+                );
 
 
-        const segundos =
-            Math.floor(
-                (distancia %
-                (1000 * 60))
-                /
-                1000
-            );
+
+            const horas =
+
+                Math.floor(
+
+                    (
+                        distancia %
+                        (
+                            1000 *
+                            60 *
+                            60 *
+                            24
+                        )
+                    )
+                    /
+                    (
+                        1000 *
+                        60 *
+                        60
+                    )
+
+                );
 
 
-        document.getElementById("dias")
+
+            const minutos =
+
+                Math.floor(
+
+                    (
+                        distancia %
+                        (
+                            1000 *
+                            60 *
+                            60
+                        )
+                    )
+                    /
+                    (
+                        1000 *
+                        60
+                    )
+
+                );
+
+
+
+            const segundos =
+
+                Math.floor(
+
+                    (
+                        distancia %
+                        (
+                            1000 *
+                            60
+                        )
+                    )
+                    /
+                    1000
+
+                );
+
+
+
+            document
+            .getElementById("dias")
             .textContent =
-            String(Math.max(dias,0))
-            .padStart(2,"0");
+
+                String(
+                    Math.max(
+                        dias,
+                        0
+                    )
+                )
+                .padStart(
+                    2,
+                    "0"
+                );
 
 
-        document.getElementById("horas")
+
+            document
+            .getElementById("horas")
             .textContent =
-            String(Math.max(horas,0))
-            .padStart(2,"0");
+
+                String(
+                    Math.max(
+                        horas,
+                        0
+                    )
+                )
+                .padStart(
+                    2,
+                    "0"
+                );
 
 
-        document.getElementById("minutos")
+
+            document
+            .getElementById("minutos")
             .textContent =
-            String(Math.max(minutos,0))
-            .padStart(2,"0");
+
+                String(
+                    Math.max(
+                        minutos,
+                        0
+                    )
+                )
+                .padStart(
+                    2,
+                    "0"
+                );
 
 
-        document.getElementById("segundos")
+
+            document
+            .getElementById("segundos")
             .textContent =
-            String(Math.max(segundos,0))
-            .padStart(2,"0");
+
+                String(
+                    Math.max(
+                        segundos,
+                        0
+                    )
+                )
+                .padStart(
+                    2,
+                    "0"
+                );
 
 
-        /* CUANDO LLEGA EL CUMPLEAÑOS */
 
-        if(distancia <= 0){
+            /*
 
-            clearInterval(contador);
+            CUANDO LLEGUE
+            EL CUMPLEAÑOS
+
+            */
 
 
-            document.getElementById("countdown")
+            if(
+                distancia <= 0
+            ){
+
+
+                clearInterval(
+                    contador
+                );
+
+
+                document
+                .getElementById("countdown")
                 .style.display =
                 "none";
 
 
-            document.querySelector(".countdown-text")
+                document
+                .querySelector(
+                    ".countdown-text"
+                )
                 .style.display =
                 "none";
 
 
-            document.querySelector(".countdown-section h2")
+                document
+                .querySelector(
+                    ".countdown-section h2"
+                )
                 .style.display =
                 "none";
 
 
-            document.getElementById("birthdayMessage")
+                document
+                .getElementById(
+                    "birthdayMessage"
+                )
                 .style.display =
                 "block";
 
 
-            crearMuchosCorazones();
-
-        }
-
-    },1000);
+                crearMuchosCorazones();
 
 
+            }
 
-/* ========================= */
+
+        },
+        1000
+    );
+
+
+
+/* ================================= */
 /* SORPRESA FINAL */
-/* ========================= */
+/* ================================= */
 
 function mostrarSorpresa(){
 
-    document.getElementById("mensajeFinal")
-        .innerHTML = `
 
-        ❤️ Amor mio...
+    document
+    .getElementById(
+        "mensajeFinal"
+    )
+    .innerHTML = `
+
+
+        ❤️ Amor mío...
+
 
         <br><br>
+
 
         Si llegaste hasta aquí,
         quiero que sepas que esta página
         fue hecha especialmente para ti.
 
+
         <br><br>
+
 
         Gracias por existir,
         por todos nuestros momentos
         y por formar parte de mi vida.
 
+
         <br><br>
+
 
         Espero que este sea solamente
         uno de muchísimos cumpleaños
         que podamos celebrar juntos.
 
+
         <br><br>
 
+
         <strong>
-        Feliz cumpleaños, mi niña. ❤️
+
+        Feliz cumpleaños,
+        amor mío. ❤️
+
         </strong>
 
-        `;
+
+    `;
 
 
     crearMuchosCorazones();
 
+
 }
 
 
 
-/* ========================= */
-/* CORAZONES */
-/* ========================= */
+/* ================================= */
+/* CORAZONES FLOTANTES */
+/* ================================= */
 
 function crearCorazones(){
 
-    setInterval(()=>{
 
-        const corazon =
-            document.createElement("div");
+    setInterval(
 
+        ()=>{
 
-        corazon.className =
-            "floating-heart";
-
-
-        corazon.innerHTML =
-            ["❤️","💕","💗","💖","💘"]
-            [Math.floor(Math.random()*5)];
-
-
-        corazon.style.left =
-            Math.random()*100+"vw";
-
-
-        corazon.style.fontSize =
-            (15 + Math.random()*25)+"px";
-
-
-        document.body.appendChild(corazon);
-
-
-        setTimeout(()=>{
-
-            corazon.remove();
-
-        },6000);
-
-    },900);
-
-}
-
-
-
-/* MUCHOS CORAZONES */
-
-function crearMuchosCorazones(){
-
-    for(let i=0;i<50;i++){
-
-        setTimeout(()=>{
 
             const corazon =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
 
 
             corazon.className =
@@ -988,27 +1577,139 @@ function crearMuchosCorazones(){
 
 
             corazon.innerHTML =
-                "❤️";
+
+                [
+                    "❤️",
+                    "💕",
+                    "💗",
+                    "💖",
+                    "💘"
+                ]
+                [
+                    Math.floor(
+                        Math.random()*5
+                    )
+                ];
 
 
             corazon.style.left =
-                Math.random()*100+"vw";
+
+                Math.random()*100
+                + "vw";
 
 
             corazon.style.fontSize =
-                (20+Math.random()*35)+"px";
+
+                (
+                    15 +
+                    Math.random()*25
+                )
+                + "px";
 
 
-            document.body.appendChild(corazon);
+            document
+            .body
+            .appendChild(
+                corazon
+            );
 
 
-            setTimeout(()=>{
+            setTimeout(
 
-                corazon.remove();
+                ()=>{
 
-            },6000);
+                    corazon.remove();
 
-        },i*100);
+                },
+
+                6000
+
+            );
+
+
+        },
+
+        900
+
+    );
+
+}
+
+
+
+/* ================================= */
+/* MUCHOS CORAZONES */
+/* ================================= */
+
+function crearMuchosCorazones(){
+
+
+    for(
+        let i=0;
+        i<50;
+        i++
+    ){
+
+
+        setTimeout(
+
+            ()=>{
+
+
+                const corazon =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                corazon.className =
+                    "floating-heart";
+
+
+                corazon.innerHTML =
+                    "❤️";
+
+
+                corazon.style.left =
+
+                    Math.random()*100
+                    + "vw";
+
+
+                corazon.style.fontSize =
+
+                    (
+                        20 +
+                        Math.random()*35
+                    )
+                    + "px";
+
+
+                document
+                .body
+                .appendChild(
+                    corazon
+                );
+
+
+                setTimeout(
+
+                    ()=>{
+
+                        corazon.remove();
+
+                    },
+
+                    6000
+
+                );
+
+
+            },
+
+            i*100
+
+        );
 
     }
 
@@ -1016,27 +1717,7 @@ function crearMuchosCorazones(){
 
 </script>
 
+
 </body>
+
 </html>
-<div class="galeria">
-
-    <div class="foto">
-        <img src="foto1.jpg" alt="Nuestro recuerdo">
-    </div>
-
-    <div class="foto">
-        <img src="foto2.jpg" alt="Nuestro recuerdo">
-    </div>
-
-    <div class="foto">
-        <img src="foto3.jpg" alt="Nuestro recuerdo">
-    </div>
-
-    <div class="foto">
-        <img src="foto4.jpg" alt="Nuestro recuerdo">
-    </div>
-
-</div>
-<audio id="musica" controls loop>
-    <source src="musica.mp3" type="audio/mpeg">
-</audio>
