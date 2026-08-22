@@ -9,632 +9,796 @@
 
 <title>Para mi amor ❤️</title>
 
-
 <style>
 
-/* ========================= */
-/* GENERAL */
-/* ========================= */
+/* =========================
+   CONFIGURACIÓN GENERAL
+========================= */
 
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
+body {
+    font-family: Georgia, serif;
+    background: #120812;
+    color: white;
+    overflow-x: hidden;
+}
 
-    font-family:Georgia,serif;
+
+/* =========================
+   FONDO ANIMADO
+========================= */
+
+#espera {
+    position: fixed;
+    inset: 0;
+    z-index: 5000;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
 
     background:
-    linear-gradient(
-        135deg,
-        #120812,
-        #351329,
-        #76264d
-    );
-
-    color:white;
-
-    overflow-x:hidden;
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(255, 91, 145, .25),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(180, 55, 120, .18),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #0c0610,
+            #241020,
+            #4a1936,
+            #170914
+        );
 }
 
 
-/* ========================= */
-/* PANTALLA DE CONTRASEÑA */
-/* ========================= */
+/* estrellas */
 
-#login{
+.estrella {
+    position: absolute;
 
-    position:fixed;
+    width: 3px;
+    height: 3px;
 
-    inset:0;
+    background: white;
 
-    z-index:1000;
+    border-radius: 50%;
 
-    display:flex;
+    opacity: .6;
 
-    align-items:center;
-
-    justify-content:center;
-
-    text-align:center;
-
-    background:
-    linear-gradient(
-        135deg,
-        #100711,
-        #42172f
-    );
+    animation: brillo 3s infinite;
 }
 
+@keyframes brillo {
 
-.login-box{
+    0%, 100% {
+        opacity: .2;
+        transform: scale(.7);
+    }
 
-    width:90%;
-
-    max-width:450px;
-
-    padding:45px 30px;
-
-    border-radius:25px;
-
-    background:
-    rgba(255,255,255,.1);
-
-    backdrop-filter:blur(15px);
-
-    box-shadow:
-    0 20px 60px
-    rgba(0,0,0,.5);
-}
-
-
-.heart{
-
-    font-size:70px;
-
-    animation:
-    beat 1.3s infinite;
-}
-
-
-@keyframes beat{
-
-    50%{
-
-        transform:
-        scale(1.2);
-
+    50% {
+        opacity: 1;
+        transform: scale(1.4);
     }
 
 }
 
 
-.login-box h1{
+/* =========================
+   CAJA DE ESPERA
+========================= */
 
-    font-size:2.5rem;
+.espera-contenido {
 
-    margin:20px 0;
+    width: 90%;
+    max-width: 850px;
+
+    position: relative;
+    z-index: 10;
+
+    padding: 40px 25px;
+}
+
+
+.corazon-grande {
+
+    font-size: 85px;
+
+    margin-bottom: 15px;
+
+    animation:
+        latido 1.5s infinite;
+
+    filter:
+        drop-shadow(
+            0 0 25px
+            rgba(255, 80, 140, .7)
+        );
+}
+
+@keyframes latido {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
 
 }
 
 
-.login-box p{
-
-    color:#ffd9e7;
-
-    line-height:1.7;
-
-}
-
-
-input{
-
-    width:100%;
-
-    padding:15px;
-
-    margin:25px 0 15px;
-
-    border:none;
-
-    border-radius:30px;
-
-    text-align:center;
-
-    font-size:17px;
-
-    outline:none;
-}
-
-
-button{
-
-    border:none;
-
-    border-radius:30px;
-
-    padding:15px 30px;
-
-    background:#ff5c93;
-
-    color:white;
-
-    font-size:16px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-    box-shadow:
-    0 8px 25px
-    rgba(255,92,147,.35);
-}
-
-
-button:hover{
-
-    transform:scale(1.07);
-
-    background:#ff78a6;
-
-}
-
-
-#error{
-
-    margin-top:15px;
-
-    color:#ffb5c9;
-
-}
-
-
-/* ========================= */
-/* CONTENIDO */
-/* ========================= */
-
-#contenido{
-
-    display:none;
-
-}
-
-
-/* ========================= */
-/* INICIO */
-/* ========================= */
-
-.hero{
-
-    min-height:100vh;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-    padding:30px;
-}
-
-
-.hero h1{
+.espera-contenido h1 {
 
     font-size:
-    clamp(
-        3rem,
-        9vw,
-        7rem
-    );
+        clamp(
+            2.5rem,
+            7vw,
+            5.5rem
+        );
+
+    margin-bottom: 20px;
 
     text-shadow:
-    0 0 30px
-    rgba(255,150,190,.5);
-
+        0 0 30px
+        rgba(255, 140, 190, .5);
 }
 
 
-.hero p{
+.subtitulo {
 
-    max-width:700px;
+    color: #ffdce9;
 
-    font-size:1.25rem;
+    font-size: 1.15rem;
 
-    line-height:1.8;
+    line-height: 1.8;
 
-    color:#ffe4ed;
+    max-width: 650px;
 
+    margin: auto;
 }
 
 
-/* ========================= */
-/* CUENTA REGRESIVA */
-/* ========================= */
+/* =========================
+   CUENTA REGRESIVA
+========================= */
 
-.countdown-section{
+.countdown {
 
-    min-height:100vh;
+    display: flex;
 
-    display:flex;
+    justify-content: center;
 
-    flex-direction:column;
+    flex-wrap: wrap;
 
-    justify-content:center;
+    gap: 15px;
 
-    align-items:center;
-
-    text-align:center;
-
-    padding:30px;
+    margin-top: 45px;
 }
 
 
-.countdown-section h2{
+.time-box {
 
-    font-size:
-    clamp(
-        2rem,
-        6vw,
-        4rem
-    );
+    min-width: 130px;
 
-    margin-bottom:15px;
+    padding: 25px 18px;
 
-}
-
-
-.countdown-text{
-
-    color:#ffd9e7;
-
-    margin-bottom:35px;
-
-    font-size:1.1rem;
-
-}
-
-
-.countdown{
-
-    display:flex;
-
-    justify-content:center;
-
-    flex-wrap:wrap;
-
-    gap:15px;
-
-    max-width:900px;
-
-}
-
-
-.time-box{
-
-    width:140px;
-
-    padding:25px 15px;
-
-    border-radius:20px;
+    border-radius: 25px;
 
     background:
-    rgba(255,255,255,.1);
+        rgba(255,255,255,.08);
 
-    backdrop-filter:blur(12px);
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    backdrop-filter:
+        blur(15px);
 
     box-shadow:
-    0 15px 35px
-    rgba(0,0,0,.25);
+        0 15px 40px
+        rgba(0,0,0,.3);
 
+    transition: .3s;
 }
 
 
-.time-box span{
-
-    display:block;
-
-    font-size:3rem;
-
-    font-weight:bold;
-
-}
-
-
-.time-box small{
-
-    color:#ffcbdc;
-
-    font-size:1rem;
-
-}
-
-
-.birthday-message{
-
-    display:none;
-
-    font-size:
-    clamp(
-        2rem,
-        7vw,
-        5rem
-    );
-
-    animation:
-    appear 1s ease;
-
-}
-
-
-@keyframes appear{
-
-    from{
-
-        opacity:0;
-
-        transform:
-        scale(.7);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-        scale(1);
-
-    }
-
-}
-
-
-/* ========================= */
-/* SECCIONES */
-/* ========================= */
-
-section{
-
-    padding:90px 20px;
-
-    text-align:center;
-
-}
-
-
-section h2{
-
-    font-size:2.5rem;
-
-    margin-bottom:25px;
-
-}
-
-
-.texto{
-
-    max-width:700px;
-
-    margin:auto;
-
-    line-height:1.9;
-
-    color:#ffe5ee;
-
-    font-size:1.1rem;
-
-}
-
-
-/* ========================= */
-/* GALERÍA */
-/* ========================= */
-
-.galeria{
-
-    max-width:1000px;
-
-    margin:40px auto;
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(
-        auto-fit,
-        minmax(220px,1fr)
-    );
-
-    gap:20px;
-
-}
-
-
-.foto{
-
-    height:300px;
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-    box-shadow:
-    0 15px 35px
-    rgba(0,0,0,.4);
-
-    transition:.4s;
-
-}
-
-
-.foto:hover{
+.time-box:hover {
 
     transform:
-    translateY(-10px)
-    rotate(1deg);
-
-}
-
-
-.foto img{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-}
-
-
-/* ========================= */
-/* CARTA */
-/* ========================= */
-
-.carta{
-
-    max-width:750px;
-
-    margin:40px auto;
-
-    padding:40px;
-
-    border-radius:25px;
+        translateY(-8px);
 
     background:
-    rgba(255,255,255,.09);
+        rgba(255,255,255,.13);
+}
 
-    backdrop-filter:blur(10px);
 
-    line-height:2;
+.time-box span {
 
-    text-align:left;
+    display: block;
+
+    font-size: 3.3rem;
+
+    font-weight: bold;
+
+    color: #fff;
+
+    text-shadow:
+        0 0 20px
+        rgba(255,120,170,.5);
+}
+
+
+.time-box small {
+
+    display: block;
+
+    margin-top: 8px;
+
+    color: #ffc8dc;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* =========================
+   MENSAJE
+========================= */
+
+.frase {
+
+    margin-top: 45px;
+
+    color: #ffcddd;
+
+    font-style: italic;
+
+    font-size: 1.1rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   LOGIN
+========================= */
+
+#login {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 10000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #692746,
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #100711,
+            #321328,
+            #511b39
+        );
+}
+
+
+.login-box {
+
+    width: 90%;
+
+    max-width: 450px;
+
+    padding: 45px 30px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    backdrop-filter:
+        blur(20px);
 
     box-shadow:
-    0 20px 50px
-    rgba(0,0,0,.2);
-
+        0 25px 80px
+        rgba(0,0,0,.5);
 }
 
 
-/* ========================= */
-/* MÚSICA */
-/* ========================= */
+.login-box h1 {
 
-.music{
+    font-size: 2.5rem;
 
-    position:fixed;
+    margin: 20px 0;
+}
 
-    bottom:20px;
 
-    right:20px;
+.login-box p {
 
-    z-index:500;
+    color: #ffd9e7;
+
+    line-height: 1.7;
+}
+
+
+input {
+
+    width: 100%;
+
+    padding: 15px;
+
+    margin:
+        25px 0 15px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    font-size: 17px;
+
+    outline: none;
+}
+
+
+button {
+
+    border: none;
+
+    border-radius: 30px;
+
+    padding:
+        15px 30px;
 
     background:
-    rgba(255,255,255,.12);
+        #ff5c93;
 
-    padding:10px;
+    color: white;
 
-    border-radius:20px;
+    font-size: 16px;
 
-    backdrop-filter:blur(10px);
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+
+button:hover {
+
+    transform:
+        scale(1.07);
+
+    background:
+        #ff78a6;
+}
+
+
+#error {
+
+    margin-top: 15px;
+
+    color: #ffb5c9;
+}
+
+
+/* =========================
+   CONTENIDO DESBLOQUEADO
+========================= */
+
+#contenido {
+
+    display: none;
 
 }
 
 
-.music audio{
+/* =========================
+   HERO
+========================= */
 
-    width:230px;
+.hero {
 
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
 }
 
 
-/* ========================= */
-/* SORPRESA FINAL */
-/* ========================= */
+.hero h1 {
 
-.sorpresa{
+    font-size:
+        clamp(
+            3rem,
+            9vw,
+            7rem
+        );
 
-    min-height:100vh;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-    padding:30px;
-
+    text-shadow:
+        0 0 30px
+        rgba(255,150,190,.5);
 }
 
 
-#mensajeFinal{
+.hero p {
 
-    max-width:700px;
+    max-width: 700px;
 
-    margin-top:30px;
+    font-size: 1.25rem;
 
-    font-size:1.4rem;
+    line-height: 1.8;
 
-    line-height:1.8;
-
+    color: #ffe4ed;
 }
 
 
-footer{
+.heart {
 
-    text-align:center;
-
-    padding:40px;
-
-    color:#ffc8da;
-
-}
-
-
-/* ========================= */
-/* CORAZONES */
-/* ========================= */
-
-.floating-heart{
-
-    position:fixed;
-
-    bottom:-30px;
-
-    z-index:900;
+    font-size: 70px;
 
     animation:
-    float 6s linear forwards;
+        latido 1.3s infinite;
+}
 
-    pointer-events:none;
+
+/* =========================
+   SECCIONES
+========================= */
+
+section {
+
+    padding:
+        90px 20px;
+
+    text-align: center;
+}
+
+
+section h2 {
+
+    font-size: 2.5rem;
+
+    margin-bottom: 25px;
+}
+
+
+.texto {
+
+    max-width: 700px;
+
+    margin: auto;
+
+    line-height: 1.9;
+
+    color: #ffe5ee;
+
+    font-size: 1.1rem;
+}
+
+
+/* =========================
+   FOTOS
+========================= */
+
+.galeria {
+
+    max-width: 1000px;
+
+    margin: 40px auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(220px,1fr)
+        );
+
+    gap: 20px;
+}
+
+
+.foto {
+
+    height: 300px;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 15px 35px
+        rgba(0,0,0,.4);
+
+    transition: .4s;
+}
+
+
+.foto:hover {
+
+    transform:
+        translateY(-10px)
+        rotate(1deg);
+}
+
+
+.foto img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =========================
+   CARTA
+========================= */
+
+.carta {
+
+    max-width: 750px;
+
+    margin: 40px auto;
+
+    padding: 40px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,255,255,.09);
+
+    backdrop-filter:
+        blur(10px);
+
+    line-height: 2;
+
+    text-align: left;
+}
+
+
+/* =========================
+   MÚSICA
+========================= */
+
+.music {
+
+    position: fixed;
+
+    bottom: 20px;
+
+    right: 20px;
+
+    z-index: 500;
+
+    background:
+        rgba(255,255,255,.12);
+
+    padding: 10px;
+
+    border-radius: 20px;
+
+    backdrop-filter:
+        blur(10px);
+}
+
+
+.music audio {
+
+    width: 230px;
+}
+
+
+/* =========================
+   SORPRESA
+========================= */
+
+.sorpresa {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+
+#mensajeFinal {
+
+    max-width: 700px;
+
+    margin-top: 30px;
+
+    font-size: 1.4rem;
+
+    line-height: 1.8;
+}
+
+
+footer {
+
+    text-align: center;
+
+    padding: 40px;
+
+    color: #ffc8da;
+}
+
+
+/* =========================
+   CORAZONES
+========================= */
+
+.floating-heart {
+
+    position: fixed;
+
+    bottom: -30px;
+
+    z-index: 900;
+
+    animation:
+        float 6s linear forwards;
+
+    pointer-events: none;
+}
+
+
+@keyframes float {
+
+    to {
+
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
 
 }
 
 
-@keyframes float{
+/* =========================
+   ANIMACIÓN DESBLOQUEO
+========================= */
 
-    to{
+#espera.desaparecer {
+
+    animation:
+        abrir 2s forwards;
+}
+
+
+@keyframes abrir {
+
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.3);
+        pointer-events: none;
+    }
+
+}
+
+
+/* =========================
+   MENSAJE CUMPLEAÑOS
+========================= */
+
+.final-cumple {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 7000;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle,
+            #9c315f,
+            #2b0c21,
+            #0c050c
+        );
+}
+
+
+.final-cumple h1 {
+
+    font-size:
+        clamp(
+            3rem,
+            9vw,
+            7rem
+        );
+
+    animation:
+        aparecer 1.5s ease;
+
+}
+
+
+@keyframes aparecer {
+
+    from {
+
+        opacity: 0;
 
         transform:
-        translateY(-110vh)
-        rotate(360deg);
+            scale(.5);
 
-        opacity:0;
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
 
     }
 
@@ -645,25 +809,30 @@ footer{
 </head>
 
 
-
 <body>
 
 
-<!-- ================================= -->
-<!-- CONTRASEÑA -->
-<!-- ================================= -->
+<!-- ================================================= -->
+<!-- LOGIN -->
+<!-- ================================================= -->
 
 <div id="login">
 
+
     <div class="login-box">
 
+
         <div class="heart">
+
             ❤️
+
         </div>
 
 
         <h1>
+
             Una sorpresa para mi amor
+
         </h1>
 
 
@@ -679,9 +848,13 @@ footer{
 
 
         <input
+
             type="password"
+
             id="password"
+
             placeholder="Escribe la contraseña..."
+
         >
 
 
@@ -694,457 +867,438 @@ footer{
 
         <p id="error"></p>
 
+
     </div>
 
 </div>
 
 
 
-<!-- ================================= -->
-<!-- CONTENIDO -->
-<!-- ================================= -->
+<!-- ================================================= -->
+<!-- PANTALLA DE ESPERA -->
+<!-- ================================================= -->
+
+<div id="espera">
+
+
+    <div class="espera-contenido">
+
+
+        <div class="corazon-grande">
+
+            ❤️
+
+        </div>
+
+
+        <h1>
+
+            Amor mío...
+
+        </h1>
+
+
+        <p class="subtitulo">
+
+            Preparé algo muy especial para ti.
+
+            <br><br>
+
+            Pero todavía no puedes verlo...
+
+            <br>
+
+            Tendrás que esperar hasta tu día. ❤️
+
+        </p>
+
+
+        <!-- CUENTA -->
+
+        <div class="countdown">
+
+
+            <div class="time-box">
+
+                <span id="dias">
+                    00
+                </span>
+
+                <small>
+                    DÍAS
+                </small>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <span id="horas">
+                    00
+                </span>
+
+                <small>
+                    HORAS
+                </small>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <span id="minutos">
+                    00
+                </span>
+
+                <small>
+                    MINUTOS
+                </small>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <span id="segundos">
+                    00
+                </span>
+
+                <small>
+                    SEGUNDOS
+                </small>
+
+            </div>
+
+
+        </div>
+
+
+        <p class="frase">
+
+            "Lo mejor está por comenzar..." ❤️
+
+        </p>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- MENSAJE DE CUMPLEAÑOS -->
+<!-- ================================================= -->
+
+<div
+    class="final-cumple"
+    id="finalCumple"
+>
+
+
+    <div>
+
+        <h1>
+
+            🎂❤️
+
+            <br>
+
+            ¡FELIZ CUMPLEAÑOS!
+
+            <br>
+
+            AMOR MÍO
+
+            <br>
+
+            ✨🎉💗
+
+        </h1>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- CONTENIDO SECRETO -->
+<!-- ================================================= -->
 
 <div id="contenido">
 
 
-<!-- ================================= -->
-<!-- MÚSICA -->
-<!-- ================================= -->
+    <!-- MÚSICA -->
 
-<div class="music">
+    <div class="music">
 
-    <audio
-        id="musica"
-        controls
-        loop
-    >
-
-        <source
-            src="musica.mp3"
-            type="audio/mpeg"
+        <audio
+            id="musica"
+            controls
+            loop
         >
 
-    </audio>
+            <source
+                src="musica.mp3"
+                type="audio/mpeg"
+            >
 
-</div>
+        </audio>
 
-
-
-<!-- ================================= -->
-<!-- INICIO -->
-<!-- ================================= -->
-
-<div class="hero">
-
-
-    <div class="heart">
-        ❤️
     </div>
 
 
-    <h1>
 
-        Para mi amor
+    <!-- INICIO -->
 
-    </h1>
+    <div class="hero">
 
 
-    <p>
+        <div class="heart">
 
-        Tengo algo preparado para ti...
+            ❤️
 
-        <br><br>
+        </div>
 
-        Pero primero...
+
+        <h1>
+
+            Para mi amor
+
+        </h1>
+
+
+        <p>
+
+            Finalmente llegó tu día...
+
+            <br><br>
+
+            Y ahora sí puedo mostrarte
+            todo lo que preparé para ti. ❤️
+
+        </p>
+
+
+    </div>
+
+
+
+    <!-- HISTORIA -->
+
+    <section>
+
+
+        <h2>
+
+            ✨ Nuestra historia
+
+        </h2>
+
+
+        <p class="texto">
+
+            Hay personas que llegan a nuestra vida
+            y terminan convirtiéndose en alguien especial.
+
+            <br><br>
+
+            Tú eres una de esas personas para mí.
+
+            <br><br>
+
+            Cada conversación, cada risa y cada momento
+            que hemos compartido se ha convertido
+            en un recuerdo que quiero guardar.
+
+            <br><br>
+
+            Y hoy quería hacer algo diferente
+            para recordarte lo importante que eres para mí. ❤️
+
+        </p>
+
+
+    </section>
+
+
+
+    <!-- FOTOS -->
+
+    <section>
+
+
+        <h2>
+
+            📸 Nuestros recuerdos
+
+        </h2>
+
+
+        <p class="texto">
+
+            Algunas fotos de momentos
+            que quiero recordar siempre.
+
+        </p>
+
+
+        <div class="galeria">
+
+
+            <div class="foto">
+
+                <img
+                    src="foto1.jpg"
+                    alt="Nuestro recuerdo"
+                >
+
+            </div>
+
+
+            <div class="foto">
+
+                <img
+                    src="foto2.jpg"
+                    alt="Nuestro recuerdo"
+                >
+
+            </div>
+
+
+            <div class="foto">
+
+                <img
+                    src="foto3.jpg"
+                    alt="Nuestro recuerdo"
+                >
+
+            </div>
+
+
+            <div class="foto">
+
+                <img
+                    src="foto4.jpg"
+                    alt="Nuestro recuerdo"
+                >
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- CARTA -->
+
+    <section>
+
+
+        <h2>
+
+            💌 Para ti
+
+        </h2>
+
+
+        <div class="carta">
+
+
+            Amor mío,
+
+            <br><br>
+
+            Hoy quería hacer algo especial para ti,
+            porque no quería que tu cumpleaños
+            fuera simplemente un día más.
+
+            <br><br>
+
+            Quiero agradecerte por todos los momentos,
+            por las risas, las conversaciones
+            y por cada recuerdo que hemos creado.
+
+            <br><br>
+
+            Espero que este nuevo año de tu vida
+            esté lleno de cosas bonitas,
+            sueños cumplidos y muchísimas razones
+            para sonreír.
+
+            <br><br>
+
+            Y espero que yo pueda seguir estando
+            presente para compartir muchos de esos
+            momentos contigo.
+
+            <br><br>
+
+            Gracias por ser tú.
+
+            <br><br>
+
+            Feliz cumpleaños, amor mío.
+
+            <br><br>
+
+            Te quiero muchísimo. ❤️
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- SORPRESA FINAL -->
+
+    <div class="sorpresa">
+
+
+        <div class="heart">
+
+            🎁
+
+        </div>
+
+
+        <h2>
+
+            Tengo una última sorpresa...
+
+        </h2>
+
 
         <br>
 
-        espera conmigo hasta que llegue
-        tu día especial. ❤️
 
-    </p>
+        <button
+            onclick="mostrarSorpresa()"
+        >
 
+            Abrir ❤️
 
-    <br>
-
-
-    <button
-        onclick="
-        document
-        .getElementById('cuenta')
-        .scrollIntoView({
-            behavior:'smooth'
-        })
-        "
-    >
-
-        Ver la cuenta regresiva ↓
-
-    </button>
+        </button>
 
 
-</div>
-
-
-
-<!-- ================================= -->
-<!-- CUENTA REGRESIVA -->
-<!-- ================================= -->
-
-<div
-    class="countdown-section"
-    id="cuenta"
->
-
-
-    <h2>
-
-        ⏳ Falta poquito...
-
-    </h2>
-
-
-    <p class="countdown-text">
-
-        Cada segundo que pasa
-        estamos más cerca de tu día. ❤️
-
-    </p>
-
-
-    <div
-        class="countdown"
-        id="countdown"
-    >
-
-
-        <div class="time-box">
-
-            <span id="dias">
-                00
-            </span>
-
-            <small>
-                DÍAS
-            </small>
-
-        </div>
-
-
-        <div class="time-box">
-
-            <span id="horas">
-                00
-            </span>
-
-            <small>
-                HORAS
-            </small>
-
-        </div>
-
-
-        <div class="time-box">
-
-            <span id="minutos">
-                00
-            </span>
-
-            <small>
-                MINUTOS
-            </small>
-
-        </div>
-
-
-        <div class="time-box">
-
-            <span id="segundos">
-                00
-            </span>
-
-            <small>
-                SEGUNDOS
-            </small>
-
-        </div>
+        <p id="mensajeFinal"></p>
 
 
     </div>
 
 
+    <footer>
 
-    <!-- MENSAJE CUANDO LLEGA EL CUMPLEAÑOS -->
+        Hecho especialmente para mi amor ❤️
 
-    <div
-        class="birthday-message"
-        id="birthdayMessage"
-    >
-
-        🎂❤️
-
-        <br>
-
-        ¡FELIZ CUMPLEAÑOS,
-        AMOR MÍO!
-
-        <br>
-
-        ✨🎉💗
-
-    </div>
-
-
-</div>
-
-
-
-<!-- ================================= -->
-<!-- NUESTRA HISTORIA -->
-<!-- ================================= -->
-
-<section>
-
-
-    <h2>
-
-        ✨ Nuestra historia
-
-    </h2>
-
-
-    <p class="texto">
-
-
-        Hay personas que llegan a nuestra vida
-        y terminan convirtiéndose en alguien especial.
-
-
-        <br><br>
-
-
-        Tú eres una de esas personas para mí.
-
-
-        <br><br>
-
-
-        Cada conversación, cada risa y cada momento
-        que hemos compartido se ha convertido
-        en un recuerdo que quiero guardar.
-
-
-        <br><br>
-
-
-        Y hoy quería hacer algo diferente
-        para recordarte lo importante que eres para mí. ❤️
-
-
-    </p>
-
-
-</section>
-
-
-
-<!-- ================================= -->
-<!-- FOTOS -->
-<!-- ================================= -->
-
-<section>
-
-
-    <h2>
-
-        📸 Nuestros recuerdos
-
-    </h2>
-
-
-    <p class="texto">
-
-        Algunas fotos de momentos
-        que quiero recordar siempre.
-
-    </p>
-
-
-
-    <div class="galeria">
-
-
-        <div class="foto">
-
-            <img
-                src="foto1.jpg"
-                alt="Nuestro recuerdo"
-            >
-
-        </div>
-
-
-        <div class="foto">
-
-            <img
-                src="foto2.jpg"
-                alt="Nuestro recuerdo"
-            >
-
-        </div>
-
-
-        <div class="foto">
-
-            <img
-                src="foto3.jpg"
-                alt="Nuestro recuerdo"
-            >
-
-        </div>
-
-
-        <div class="foto">
-
-            <img
-                src="foto4.jpg"
-                alt="Nuestro recuerdo"
-            >
-
-        </div>
-
-
-    </div>
-
-
-</section>
-
-
-
-<!-- ================================= -->
-<!-- CARTA -->
-<!-- ================================= -->
-
-<section>
-
-
-    <h2>
-
-        💌 Para ti
-
-    </h2>
-
-
-
-    <div class="carta">
-
-
-        Amor mío,
-
-
-        <br><br>
-
-
-        Hoy quería hacer algo especial para ti,
-        porque no quería que tu cumpleaños
-        fuera simplemente un día más.
-
-
-        <br><br>
-
-
-        Quiero agradecerte por todos los momentos,
-        por las risas, las conversaciones
-        y por cada recuerdo que hemos creado.
-
-
-        <br><br>
-
-
-        Espero que este nuevo año de tu vida
-        esté lleno de cosas bonitas,
-        sueños cumplidos y muchísimas razones
-        para sonreír.
-
-
-        <br><br>
-
-
-        Y espero que yo pueda seguir estando
-        presente para compartir muchos de esos
-        momentos contigo.
-
-
-        <br><br>
-
-
-        Gracias por ser tú.
-
-
-        <br><br>
-
-
-        Feliz cumpleaños, amor mío.
-
-
-        <br><br>
-
-
-        Te quiero muchísimo. ❤️
-
-
-    </div>
-
-
-</section>
-
-
-
-<!-- ================================= -->
-<!-- SORPRESA FINAL -->
-<!-- ================================= -->
-
-<div class="sorpresa">
-
-
-    <div class="heart">
-
-        🎁
-
-    </div>
-
-
-    <h2>
-
-        Tengo una última sorpresa...
-
-    </h2>
-
-
-    <br>
-
-
-    <button
-        onclick="mostrarSorpresa()"
-    >
-
-        Abrir ❤️
-
-    </button>
-
-
-    <p id="mensajeFinal"></p>
-
-
-</div>
-
-
-
-<footer>
-
-    Hecho especialmente para mi amor ❤️
-
-</footer>
+    </footer>
 
 
 </div>
@@ -1154,9 +1308,9 @@ footer{
 <script>
 
 
-/* ================================= */
+/* ================================================= */
 /* CONTRASEÑA */
-/* ================================= */
+/* ================================================= */
 
 function entrar(){
 
@@ -1178,27 +1332,23 @@ function entrar(){
         "none";
 
 
-        document
-        .getElementById("contenido")
-        .style.display =
-        "block";
-
-
         /*
-        Intentamos reproducir
-        la música.
-        El navegador puede
-        bloquear el autoplay.
+        Después de poner la contraseña
+        mostramos únicamente
+        la cuenta regresiva.
         */
 
 
         document
-        .getElementById("musica")
-        .play()
-        .catch(()=>{});
+        .getElementById("espera")
+        .style.display =
+        "flex";
 
 
-        crearCorazones();
+        crearEstrellas();
+
+
+        iniciarCuenta();
 
 
     }
@@ -1218,9 +1368,9 @@ function entrar(){
 
 
 
-/* ================================= */
-/* ENTER PARA CONTRASEÑA */
-/* ================================= */
+/* ================================================= */
+/* ENTER */
+/* ================================================= */
 
 document
 .getElementById("password")
@@ -1241,260 +1391,527 @@ document
 
 
 
-/* ================================= */
+/* ================================================= */
 /* CUENTA REGRESIVA */
-/* ================================= */
+/* ================================================= */
+
+function iniciarCuenta(){
 
 
-/*
+    const fechaCumpleaños =
 
-CUMPLEAÑOS:
-
-27 DE AGOSTO DE 2026
-00:00 HORA PERÚ
-
-*/
-
-
-const fechaCumpleaños =
-
-    new Date(
-        "2026-08-27T00:00:00-05:00"
-    ).getTime();
+        new Date(
+            "2026-08-27T00:00:00-05:00"
+        ).getTime();
 
 
 
-const contador =
+    const contador =
 
-    setInterval(
-        function(){
+        setInterval(
 
-
-            const ahora =
-
-                new Date()
-                .getTime();
+            function(){
 
 
+                const ahora =
 
-            const distancia =
-
-                fechaCumpleaños
-                - ahora;
-
+                    new Date()
+                    .getTime();
 
 
-            const dias =
+                const distancia =
 
-                Math.floor(
-
-                    distancia /
-                    (
-                        1000 *
-                        60 *
-                        60 *
-                        24
-                    )
-
-                );
+                    fechaCumpleaños
+                    - ahora;
 
 
 
-            const horas =
+                const dias =
 
-                Math.floor(
+                    Math.floor(
 
-                    (
-                        distancia %
+                        distancia /
                         (
                             1000 *
                             60 *
                             60 *
                             24
                         )
-                    )
-                    /
-                    (
-                        1000 *
-                        60 *
-                        60
-                    )
 
-                );
+                    );
 
 
+                const horas =
 
-            const minutos =
+                    Math.floor(
 
-                Math.floor(
-
-                    (
-                        distancia %
+                        (
+                            distancia %
+                            (
+                                1000 *
+                                60 *
+                                60 *
+                                24
+                            )
+                        )
+                        /
                         (
                             1000 *
                             60 *
                             60
                         )
-                    )
-                    /
-                    (
-                        1000 *
-                        60
-                    )
 
-                );
+                    );
 
 
+                const minutos =
 
-            const segundos =
+                    Math.floor(
 
-                Math.floor(
-
-                    (
-                        distancia %
+                        (
+                            distancia %
+                            (
+                                1000 *
+                                60 *
+                                60
+                            )
+                        )
+                        /
                         (
                             1000 *
                             60
                         )
+
+                    );
+
+
+                const segundos =
+
+                    Math.floor(
+
+                        (
+                            distancia %
+                            (
+                                1000 *
+                                60
+                            )
+                        )
+                        /
+                        1000
+
+                    );
+
+
+
+                document
+                .getElementById("dias")
+                .textContent =
+
+                    String(
+                        Math.max(
+                            dias,
+                            0
+                        )
                     )
-                    /
-                    1000
+                    .padStart(
+                        2,
+                        "0"
+                    );
 
-                );
 
+
+                document
+                .getElementById("horas")
+                .textContent =
+
+                    String(
+                        Math.max(
+                            horas,
+                            0
+                        )
+                    )
+                    .padStart(
+                        2,
+                        "0"
+                    );
+
+
+
+                document
+                .getElementById("minutos")
+                .textContent =
+
+                    String(
+                        Math.max(
+                            minutos,
+                            0
+                        )
+                    )
+                    .padStart(
+                        2,
+                        "0"
+                    );
+
+
+
+                document
+                .getElementById("segundos")
+                .textContent =
+
+                    String(
+                        Math.max(
+                            segundos,
+                            0
+                        )
+                    )
+                    .padStart(
+                        2,
+                        "0"
+                    );
+
+
+
+                /* =====================
+                   CUANDO LLEGA EL DÍA
+                ===================== */
+
+                if(
+                    distancia <= 0
+                ){
+
+
+                    clearInterval(
+                        contador
+                    );
+
+
+                    desbloquearPagina();
+
+
+                }
+
+
+            },
+
+            1000
+
+        );
+
+}
+
+
+
+/* ================================================= */
+/* DESBLOQUEAR PÁGINA */
+/* ================================================= */
+
+function desbloquearPagina(){
+
+
+    document
+    .getElementById("espera")
+    .classList
+    .add("desaparecer");
+
+
+    setTimeout(
+
+        function(){
 
 
             document
-            .getElementById("dias")
-            .textContent =
-
-                String(
-                    Math.max(
-                        dias,
-                        0
-                    )
-                )
-                .padStart(
-                    2,
-                    "0"
-                );
-
+            .getElementById("espera")
+            .style.display =
+            "none";
 
 
             document
-            .getElementById("horas")
-            .textContent =
-
-                String(
-                    Math.max(
-                        horas,
-                        0
-                    )
-                )
-                .padStart(
-                    2,
-                    "0"
-                );
+            .getElementById("finalCumple")
+            .style.display =
+            "flex";
 
 
-
-            document
-            .getElementById("minutos")
-            .textContent =
-
-                String(
-                    Math.max(
-                        minutos,
-                        0
-                    )
-                )
-                .padStart(
-                    2,
-                    "0"
-                );
-
-
-
-            document
-            .getElementById("segundos")
-            .textContent =
-
-                String(
-                    Math.max(
-                        segundos,
-                        0
-                    )
-                )
-                .padStart(
-                    2,
-                    "0"
-                );
-
+            crearMuchosCorazones();
 
 
             /*
-
-            CUANDO LLEGUE
-            EL CUMPLEAÑOS
-
+            Después de 4 segundos
+            aparece la página.
             */
 
+            setTimeout(
 
-            if(
-                distancia <= 0
-            ){
-
-
-                clearInterval(
-                    contador
-                );
+                function(){
 
 
-                document
-                .getElementById("countdown")
-                .style.display =
-                "none";
+                    document
+                    .getElementById("finalCumple")
+                    .style.display =
+                    "none";
 
 
-                document
-                .querySelector(
-                    ".countdown-text"
-                )
-                .style.display =
-                "none";
+                    document
+                    .getElementById("contenido")
+                    .style.display =
+                    "block";
 
 
-                document
-                .querySelector(
-                    ".countdown-section h2"
-                )
-                .style.display =
-                "none";
+                    /*
+                    Intentamos reproducir
+                    la música.
+                    */
+
+                    document
+                    .getElementById("musica")
+                    .play()
+                    .catch(()=>{});
 
 
-                document
-                .getElementById(
-                    "birthdayMessage"
-                )
-                .style.display =
-                "block";
+                    crearCorazones();
 
 
-                crearMuchosCorazones();
+                },
 
+                4500
 
-            }
+            );
 
 
         },
-        1000
+
+        2000
+
     );
 
+}
 
 
-/* ================================= */
+
+/* ================================================= */
+/* ESTRELLAS */
+/* ================================================= */
+
+function crearEstrellas(){
+
+
+    for(
+        let i = 0;
+        i < 80;
+        i++
+    ){
+
+
+        const estrella =
+            document.createElement(
+                "div"
+            );
+
+
+        estrella.className =
+            "estrella";
+
+
+        estrella.style.left =
+            Math.random() *
+            100 +
+            "vw";
+
+
+        estrella.style.top =
+            Math.random() *
+            100 +
+            "vh";
+
+
+        estrella.style.animationDelay =
+            Math.random() *
+            3 +
+            "s";
+
+
+        document
+        .getElementById("espera")
+        .appendChild(
+            estrella
+        );
+
+
+    }
+
+}
+
+
+
+/* ================================================= */
+/* CORAZONES */
+/* ================================================= */
+
+function crearCorazones(){
+
+
+    setInterval(
+
+        ()=>{
+
+
+            const corazon =
+                document.createElement(
+                    "div"
+                );
+
+
+            corazon.className =
+                "floating-heart";
+
+
+            corazon.innerHTML =
+
+                [
+                    "❤️",
+                    "💕",
+                    "💗",
+                    "💖",
+                    "💘"
+                ]
+                [
+                    Math.floor(
+                        Math.random() * 5
+                    )
+                ];
+
+
+            corazon.style.left =
+
+                Math.random() *
+                100 +
+                "vw";
+
+
+            corazon.style.fontSize =
+
+                (
+                    15 +
+                    Math.random() *
+                    25
+                ) +
+                "px";
+
+
+            document
+            .body
+            .appendChild(
+                corazon
+            );
+
+
+            setTimeout(
+
+                ()=>{
+
+                    corazon.remove();
+
+                },
+
+                6000
+
+            );
+
+
+        },
+
+        900
+
+    );
+
+}
+
+
+
+/* ================================================= */
+/* MUCHOS CORAZONES */
+/* ================================================= */
+
+function crearMuchosCorazones(){
+
+
+    for(
+        let i = 0;
+        i < 60;
+        i++
+    ){
+
+
+        setTimeout(
+
+            ()=>{
+
+
+                const corazon =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                corazon.className =
+                    "floating-heart";
+
+
+                corazon.innerHTML =
+                    "❤️";
+
+
+                corazon.style.left =
+
+                    Math.random() *
+                    100 +
+                    "vw";
+
+
+                corazon.style.fontSize =
+
+                    (
+                        20 +
+                        Math.random() *
+                        35
+                    ) +
+                    "px";
+
+
+                document
+                .body
+                .appendChild(
+                    corazon
+                );
+
+
+                setTimeout(
+
+                    ()=>{
+
+                        corazon.remove();
+
+                    },
+
+                    6000
+
+                );
+
+
+            },
+
+            i * 80
+
+        );
+
+    }
+
+}
+
+
+
+/* ================================================= */
 /* SORPRESA FINAL */
-/* ================================= */
+/* ================================================= */
 
 function mostrarSorpresa(){
 
@@ -1538,8 +1955,8 @@ function mostrarSorpresa(){
 
         <strong>
 
-        Feliz cumpleaños,
-        amor mío. ❤️
+            Feliz cumpleaños,
+            amor mío. ❤️
 
         </strong>
 
@@ -1549,174 +1966,10 @@ function mostrarSorpresa(){
 
     crearMuchosCorazones();
 
-
 }
 
-
-
-/* ================================= */
-/* CORAZONES FLOTANTES */
-/* ================================= */
-
-function crearCorazones(){
-
-
-    setInterval(
-
-        ()=>{
-
-
-            const corazon =
-                document.createElement(
-                    "div"
-                );
-
-
-            corazon.className =
-                "floating-heart";
-
-
-            corazon.innerHTML =
-
-                [
-                    "❤️",
-                    "💕",
-                    "💗",
-                    "💖",
-                    "💘"
-                ]
-                [
-                    Math.floor(
-                        Math.random()*5
-                    )
-                ];
-
-
-            corazon.style.left =
-
-                Math.random()*100
-                + "vw";
-
-
-            corazon.style.fontSize =
-
-                (
-                    15 +
-                    Math.random()*25
-                )
-                + "px";
-
-
-            document
-            .body
-            .appendChild(
-                corazon
-            );
-
-
-            setTimeout(
-
-                ()=>{
-
-                    corazon.remove();
-
-                },
-
-                6000
-
-            );
-
-
-        },
-
-        900
-
-    );
-
-}
-
-
-
-/* ================================= */
-/* MUCHOS CORAZONES */
-/* ================================= */
-
-function crearMuchosCorazones(){
-
-
-    for(
-        let i=0;
-        i<50;
-        i++
-    ){
-
-
-        setTimeout(
-
-            ()=>{
-
-
-                const corazon =
-                    document.createElement(
-                        "div"
-                    );
-
-
-                corazon.className =
-                    "floating-heart";
-
-
-                corazon.innerHTML =
-                    "❤️";
-
-
-                corazon.style.left =
-
-                    Math.random()*100
-                    + "vw";
-
-
-                corazon.style.fontSize =
-
-                    (
-                        20 +
-                        Math.random()*35
-                    )
-                    + "px";
-
-
-                document
-                .body
-                .appendChild(
-                    corazon
-                );
-
-
-                setTimeout(
-
-                    ()=>{
-
-                        corazon.remove();
-
-                    },
-
-                    6000
-
-                );
-
-
-            },
-
-            i*100
-
-        );
-
-    }
-
-}
 
 </script>
-
 
 </body>
 
